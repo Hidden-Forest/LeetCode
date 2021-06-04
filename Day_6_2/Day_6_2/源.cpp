@@ -32,3 +32,38 @@ public:
 		return false;
 	}
 };
+class Board {
+public:
+	bool checkWon(vector<vector<int> > board) {
+		// write code here
+		if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1)
+			return true;
+		if (board[1][0] == 1 && board[1][1] == 1 && board[1][2] == 1)
+			return true;
+		if (board[2][0] == 1 && board[2][1] == 1 && board[2][2] == 1)
+			return true;
+		if (board[0][0] == 1 && board[1][0] == 1 && board[2][0] == 1)
+			return true;
+		if (board[0][1] == 1 && board[1][1] == 1 && board[2][1] == 1)
+			return true;
+		if (board[0][2] == 1 && board[1][2] == 1 && board[2][2] == 1)
+			return true;
+		if (board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 1)
+			return true;
+		if (board[0][2] == 1 && board[1][1] == 1 && board[2][0] == 1)
+			return true;
+		return false;
+	}
+};
+void func(int x){
+	int count = 0;
+	while (x){
+		count++;
+		x &= (x - 1);
+	}
+	cout << count << endl;
+}
+int main(){
+	func(9999);
+
+}
